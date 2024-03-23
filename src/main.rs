@@ -2,8 +2,8 @@ mod args;
 mod chunk;
 mod chunk_type;
 mod commands;
-mod png;
 mod error;
+mod png;
 
 use crate::error::Error;
 
