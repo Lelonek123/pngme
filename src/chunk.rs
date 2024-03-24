@@ -69,7 +69,7 @@ impl Chunk {
     /// 4. The CRC of the chunk type and data *(4 bytes)*
     pub fn as_bytes(&self) -> Vec<u8> {
         let length_bytes = self.length.to_be_bytes();
-        let checksum_bytes = self.length.to_be_bytes();
+        let checksum_bytes = self.crc.to_be_bytes();
         let chunk_type_bytes = self.chunk_type.bytes();
 
         let bytes: Vec<u8> = length_bytes

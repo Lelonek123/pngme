@@ -10,7 +10,7 @@ pub enum Error {
     )]
     InvalidStringLength,
 
-    #[error("Failed to construct valid string from Chunk data.")]
+    #[error("Failed to construct valid string from Chunk data")]
     DataAsStringError,
 
     #[error("Failed to construct Chunk from bytes: to little data, need at least 12 bytes")]
@@ -24,4 +24,10 @@ pub enum Error {
 
     #[error("Got invalid ChunkType when constructing Chunk from bytes")]
     InvalidChunkType,
+
+    #[error("Chunk with specified ChunkType does not exist in Png file")]
+    RemoveChunkError,
+
+    #[error("Header in provided byte stream is not valid PNG header")]
+    InvalidHeader
 }
