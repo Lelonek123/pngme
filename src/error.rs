@@ -29,5 +29,8 @@ pub enum Error {
     RemoveChunkError,
 
     #[error("Header in provided byte stream is not valid PNG header")]
-    InvalidHeader
+    InvalidHeader,
+
+    #[error("Given path did not match any file")]
+    FileNotFound
 }

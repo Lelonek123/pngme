@@ -25,11 +25,11 @@ pub enum PngMeArgs {
 #[command(version, about, long_about = None)]
 pub struct EncodeArgs {
     /// Path to PNG file
-    path: PathBuf,
+    pub path: PathBuf,
     /// Chunk type to encode message into
-    chunk_type: String,
+    pub chunk_type: String,
     /// Message to be embedded
-    message: String,
+    pub  message: String,
 }
 
 /// Decode and display a message from given PNG file
@@ -37,9 +37,9 @@ pub struct EncodeArgs {
 #[command(version, about, long_about = None)]
 pub struct DecodeArgs {
     /// Path to PNG file
-    path: PathBuf,
+    pub path: PathBuf,
     /// Chunk type to decode message from
-    chunk_type: String,
+    pub chunk_type: String,
 }
 
 /// Remove given chunk types from given PNG file
@@ -47,9 +47,9 @@ pub struct DecodeArgs {
 #[command(version, about, long_about = None)]
 pub struct RemoveArgs {
     /// Path to PNG file
-    path: PathBuf,
+    pub path: PathBuf,
     /// Chunk type to remove message from
-    chunk_type: String,
+    pub chunk_type: String,
 }
 
 /// Print all chunks of given PNG file
@@ -57,5 +57,5 @@ pub struct RemoveArgs {
 #[command(version, about, long_about = None)]
 pub struct PrintArgs {
     /// Path to PNG file
-    path: PathBuf,
+    pub path: PathBuf,
 }

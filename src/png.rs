@@ -1,14 +1,12 @@
 use std::fmt::{Display, Formatter};
-use std::str::FromStr;
 use crate::chunk::Chunk;
-use crate::chunk_type::ChunkType;
 use crate::error::Error;
 use crate::Result;
 
 /// A PNG container as described by the PNG spec
 /// http://www.libpng.org/pub/png/spec/1.2/PNG-Contents.html
 #[derive(Debug)]
-struct Png {
+pub struct Png {
     header: [u8; 8],
     chunks: Vec<Chunk>
 }
@@ -107,11 +105,11 @@ impl TryFrom<&[u8]> for Png {
 
 impl Display for Png {
     fn fmt(&self, f: &mut Formatter<'_>) -> std::fmt::Result {
-        write!(f, "[");
-        self.as_bytes().iter().enumerate().for_each(|(index, b)| {
-            write!(f, "{b},");
+        write!(f, "[`").unwrap();
+        self.as_bytes().iter().for_each(|b| {
+            write!(f, "{b},").unwrap();
         });
-        write!(f, "]");
+        write!(f, "]").unwrap();
         Ok(())
     }
 }
