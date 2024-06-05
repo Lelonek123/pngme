@@ -4,7 +4,6 @@ mod chunk_type;
 mod commands;
 mod error;
 mod png;
-mod commands;
 
 use clap::Parser;
 use crate::args::App;
